@@ -1,0 +1,289 @@
+.enterprise-basic-details {
+  color: blue;
+  padding: 1vh 3%;
+  height: calc(100vh - 128px);
+  display: flex;
+  justify-content: space-between;
+  .left {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2vh;
+    .table-title{
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+    }
+    .sales {
+      background: no-repeat;
+      background-size: 100% 100%;
+      padding: 3%;
+      display: flex;
+      height: 59vh;
+      display: flex;
+      justify-content: space-between;
+      .sales-revenue-list {
+        width: 30%;
+        height: 100%;
+        font-size: 14px;
+        text-align: left;
+        .title {
+          width: 100%;
+          height: 4%;
+          color: #a5b8ca;
+          display: flex;
+          align-items: center;
+        }
+        span {
+          width: 20%;
+        }
+        .company-name {
+          width: 60%;
+        }
+        .sale-price {
+          width: 20%;
+        }
+        .swiper-container {
+          width: 100%;
+          height: 96%;
+          .swiper-slide {
+            color: #90d5ff;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          }
+        }
+      }
+      .sale {
+        width: 69%;
+        #sales-revenue {
+          width: 100%;
+          height:61vh;
+        }
+      }
+    }
+  }
+  .right {
+    width: 34%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .company {
+      background: no-repeat;
+      background-size: 100% 100%;
+      padding: 3%;
+      height: 17vh;
+
+      #company-number {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .industrial {
+      background: no-repeat;
+      background-size: 100% 100%;
+      padding: 3%;
+      height: 17vh;
+
+      #industrial-concentration {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .job {
+      background: no-repeat;
+      background-size: 100% 100%;
+      padding: 3%;
+      height: 17vh;
+
+      #job-number {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.talent-show {
+  .white {
+    width: 100%;
+    height: 20px;
+  }
+  .bottom {
+    font-size: 14px;
+    color: #a5b8ca;
+    display: flex;
+    justify-content: center;
+    .label {
+      margin-left: 30px;
+      display: flex;
+      align-items: center;
+      .criles {
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        display: inline-block;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+.enterpriseDevResults {
+  padding: 1vh 3%;
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 128px);
+  .chart-title {
+    width: 225px;
+    height: 40px;
+    line-height: 36px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    box-sizing: border-box;
+    padding-left: 13px;
+    font-size: 24px;
+    color: #90d5ff;
+    border: 1px solid rgba(11, 221, 255, 0.4);
+  }
+
+  .chart-bg {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding: 16px;
+  }
+
+  .left {
+    width: 65%;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 3vh;
+  }
+
+  .right {
+    width: 34%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+.person-chart{
+  height: 100vh * 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.funnel-plot {
+  height: 17vh
+}
+
+.columnar-chart {
+  height: 17vh;
+}
+
+.bar-chart {
+  height: 17vh;
+}
+
+.relationship-diagram {
+  display: flex;
+  width: 100%;
+  height: 23vh;
+  .chart {
+    flex: 1;
+    height: 100%;
+  }
+  .line {
+    width: 1px;
+    margin: 0 20px;
+  }
+  
+  .sales-revenue-list {
+    width: 15%;
+    height: 100%;
+    font-size: 14px;
+    text-align: left;
+    .title {
+      width: 100%;
+      height: 4%;
+      color: #a5b8ca;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      span{
+        display: block;
+        width: 50%;
+      }
+    }
+    .swiper-container {
+      width: 100%;
+      height: 96%;
+      flex: 1;
+      text-align: center;
+      .swiper-slide {
+        width: 100%;
+        height: 30px;
+        margin-top: 10px;
+        color: #90d5ff;
+        cursor: pointer;
+        display: flex;
+        text-align: left;
+        align-items: center;
+        span{
+          display: block;
+          width: 100%;
+        }
+        .company-name{
+          margin-left: -80px;
+        }
+      }
+    }
+  }
+}
+
+.statistical-tables {
+  height: 10vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0 3.5%;
+    text-align: center;
+    li {
+      list-style: none;
+      text-align: center;
+      &:last-child {
+        padding: 0;
+      }
+      h4,
+      p {
+        margin: 0;
+      }
+      p {
+        font-size: 18px;
+        line-height: 21px;
+        color: #a5b8ca;
+      }
+      .value {
+        display: flex;
+        align-items: flex-end;
+        color: #4fbdff;
+        font-size: 18px;
+        justify-content: center;
+        h4 {
+          font-size: 40px;
+          line-height: 47px;
+        }
+      }
+    }
+  }
+}
