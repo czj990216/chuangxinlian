@@ -22,6 +22,7 @@ function EnterpriseDevResults() {
   const [financing,setFinancing] = useState([])
   const [intellectual,setIntellectual] = useState([])
   const [qualification,setQualification] = useState([])
+  const [manager,setManager] = useState({})
   
   useEffect(() => {
     const handleData = (res) => {
@@ -39,15 +40,16 @@ function EnterpriseDevResults() {
       setFinancing(res.data.financing)
       setIntellectual(res.data.intellectual)
       setQualification(res.data.qualification)
+      setManager(res.data.manager)
     })
   },[])
   return (
     <section className='enterpriseDevResults'>
       <div className="left">
         <StatisticalTables data={base} />
-  <p className="chart-title">企业发展成果</p>
+  <p className="chart-title">园区高层人才展示</p>
         <div className='chart-bg person-chart' style={{backgroundImage:`url(${img_chart_bg})`}}>
-          <TalentShow />
+          <TalentShow data={manager} />
         </div>
         <p className="chart-title">企业资质认证数量</p>
         <div className='chart-bg' style={{backgroundImage:`url(${img_chart_bg})`}}>
@@ -67,9 +69,6 @@ function EnterpriseDevResults() {
         <div className='chart-bg bar-chart' style={{backgroundImage:`url(${img_chart_bg})`}}>
           <BarChart data={intellectual} />
         </div>
-
-       
-       
       </div>
     </section>
   );

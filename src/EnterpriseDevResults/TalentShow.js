@@ -1,29 +1,52 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { People } from "../components";
 
-const color = [
-  "#4FBDFF",
-  "#7649FF",
-  "#E21FEA",
-  "#FF4980",
-  "#FFC59B",
-  "#41BD7C",
-  "#F5FF6D",
-  "#F2A2C5",
-];
-function TalentShow() {
-  let a = 0.1 * 250;
-  let b = 0.2 * 250;
-  let c = 0.1 * 250;
-  let d = 0.3 * 250;
-  let e = 0.1 * 250;
-	let f = 0.05 * 250;
-	let g = 0.05 * 250;
-	let h = 0.1 * 250;
+function TalentShow({data}) {
+  const color = [
+    "#4FBDFF",
+    "#7649FF",
+    "#E21FEA",
+    "#FF4980",
+    "#FFC59B",
+    "#41BD7C",
+    "#F5FF6D",
+    "#F2A2C5",
+  ];
+  let [a,setA] = useState(null)
+  let [b,setB] = useState(null)
+  let [c,setC] = useState(null)
+  let [d,setD] = useState(null)
+  let [e,setE] = useState(null)
+  let [f,setF] = useState(null)
+  let [g,setG] = useState(null)
+  let [h,setH] = useState(null)
   let str1 = [];
   let str2 = [];
   let str3 = [];
   let str4 = [];
+  let str5 = [];
+  useEffect(() => {
+    if(JSON.stringify(data) !== "{}"){
+      let arr = []
+      console.log(data);
+      for(let key in data){
+        // console.log([data[key]]);
+        arr.push(data[key])
+      }
+      let total = arr.reduce((i,j) => {
+        return i + j
+      })
+      setA(Math.round((data.academicNum / total)*250))
+      setB(Math.round((data.chengduNum / total)*250))
+      setC(Math.round((data.chunkNum / total)*250))
+      setD(Math.round((data.returneeNum / total)*250))
+      setE(Math.round((data.communistPartyMemberNum / total)*250))
+      setF(Math.round((data.professionalUserNum / total)*250))
+      setG(Math.round((data.largeEnterprisesManagerNum / total)*250))
+      setH(Math.round((data.internationalTopUserNum / total)*250 - 1))
+    }
+  },[data])
+  console.log(a,b,c,d,e,f,g,h);
   for (let i = 0; i < 50; i++) {
     if (a) {
       a--;
@@ -44,12 +67,12 @@ function TalentShow() {
       f--;
       str1.push(color[5]);
     }else if(g){
-			g--;
-			str1.push(color[6]);
-		}else if(h){
-			h--;
-			str1.push(color[7]);
-		}
+      g--;
+      str1.push(color[6]);
+    }else if(h){
+      h--;
+      str1.push(color[7]);
+    }
   }
   for (let i = 0; i < 50; i++) {
     if (a) {
@@ -71,12 +94,12 @@ function TalentShow() {
       f--;
       str2.push(color[5]);
     }else if(g){
-			g--;
-			str2.push(color[6]);
-		}else if(h){
-			h--;
-			str2.push(color[7]);
-		}
+      g--;
+      str2.push(color[6]);
+    }else if(h){
+      h--;
+      str2.push(color[7]);
+    }
   }
   for (let i = 0; i < 50; i++) {
     if (a) {
@@ -98,12 +121,12 @@ function TalentShow() {
       f--;
       str3.push(color[5]);
     }else if(g){
-			g--;
-			str3.push(color[6]);
-		}else if(h){
-			h--;
-			str3.push(color[7]);
-		}
+      g--;
+      str3.push(color[6]);
+    }else if(h){
+      h--;
+      str3.push(color[7]);
+    }
   }
   for (let i = 0; i < 50; i++) {
     if (a) {
@@ -125,12 +148,39 @@ function TalentShow() {
       f--;
       str4.push(color[5]);
     }else if(g){
-			g--;
-			str4.push(color[6]);
-		}else if(h){
-			h--;
-			str4.push(color[7]);
-		}
+      g--;
+      str4.push(color[6]);
+    }else if(h){
+      h--;
+      str4.push(color[7]);
+    }
+  }
+  for (let i = 0; i < 50; i++) {
+    if (a) {
+      a--;
+      str5.push(color[0]);
+    } else if (b) {
+      b--;
+      str5.push(color[1]);
+    } else if (c) {
+      c--;
+      str5.push(color[2]);
+    } else if (d) {
+      d--;
+      str5.push(color[3]);
+    } else if (e) {
+      e--;
+      str5.push(color[4]);
+    } else if (f) {
+      f--;
+      str5.push(color[5]);
+    }else if(g){
+      g--;
+      str5.push(color[6]);
+    }else if(h){
+      h--;
+      str5.push(color[7]);
+    }
   }
   return (
     <div className="talent-show">
@@ -147,6 +197,10 @@ function TalentShow() {
       ))}
       <div className="white"></div>
       {str4.map((item, index) => (
+        <People key={index} color={item} />
+      ))}
+      <div className="white"></div>
+      {str5.map((item, index) => (
         <People key={index} color={item} />
       ))}
       <div className="white"></div>
