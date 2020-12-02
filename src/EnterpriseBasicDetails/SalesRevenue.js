@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-
-import { data } from "./test";
 // 引入 ECharts 主模块
 import echarts from "echarts";
 
@@ -9,6 +7,28 @@ function SalesRevenue() {
   useEffect(() => {
     let myChart = echarts.init(document.getElementById("sales-revenue"));
     // 绘制图表
+    let data = [
+      [32323, 70],
+      [1250, 77.4],
+      [2500, 68],
+      [5000, 74.7],
+      [28599, 75],
+      [29476, 77.1],
+      [31476, 75.4],
+      [28666, 78.1],
+      [44444, 57.7],
+      [29550, 79.1],
+      [44444, 67.9],
+      [44444, 72],
+      [24021, 75.4],
+      [50000, 76.8],
+      [33333, 70.8],
+      [19349, 69.6],
+      [44444, 67.3],
+      [26424, 75.7],
+      [37062, 75.4],
+    ]
+    let xData =  ['','E','D','C','B','A','S','S+','SS','SS+','SSS']
     let option = {
       legend: {
         right: 10,
@@ -17,13 +37,21 @@ function SalesRevenue() {
         }
       },
       xAxis: {
-        splitLine: {
-          lineStyle: false,
-        },
+        splitLine: false,
         name:'成熟度',
         nameTextStyle:{
-          color:'#A5B8CA',
+          color:'#A5B8CA'
         },
+        axisTick: {
+          alignWithLabel: true
+        },
+        axisLabel: {
+          // show: true,
+          formatter: function(params) {
+            return xData[params/5000]
+          }
+        },
+        splitNumber: xData.length,
         axisLine:{
           lineStyle:{
             color:'#A5B8CA',
@@ -77,7 +105,7 @@ function SalesRevenue() {
       },
       series: [
         {
-          data: data[0],
+          data: data,
           type: "scatter",
           symbolSize: 20,
           itemStyle: {

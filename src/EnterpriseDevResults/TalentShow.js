@@ -25,6 +25,10 @@ function TalentShow({data}) {
   let str3 = [];
   let str4 = [];
   let str5 = [];
+
+
+  const [width,setWidth] = useState(20)
+  const [height,setHeight] = useState(35)
   useEffect(() => {
     if(JSON.stringify(data) !== "{}"){
       let arr = []
@@ -44,9 +48,17 @@ function TalentShow({data}) {
       setF(Math.round((data.professionalUserNum / total)*250))
       setG(Math.round((data.largeEnterprisesManagerNum / total)*250))
       setH(Math.round((data.internationalTopUserNum / total)*250 - 1))
+      window.onresize = () => {
+        if(window.innerWidth <= 1600 && window.innerWidth > 0) {
+          setWidth(15)
+          setHeight(25)
+        }else if(window.innerWidth > 1600) {
+          setWidth(20)
+          setHeight(35)
+        }
+      }
     }
   },[data])
-  console.log(a,b,c,d,e,f,g,h);
   for (let i = 0; i < 50; i++) {
     if (a) {
       a--;
@@ -185,23 +197,23 @@ function TalentShow({data}) {
   return (
     <div className="talent-show">
       {str1.map((item, index) => (
-        <People key={index} color={item} />
+        <People key={index} color={item} width={width} height={height}/>
       ))}
       <div className="white"></div>
       {str2.map((item, index) => (
-        <People key={index} color={item} />
+        <People key={index} color={item} width={width} height={height}/>
       ))}
       <div className="white"></div>
       {str3.map((item, index) => (
-        <People key={index} color={item} />
+        <People key={index} color={item} width={width} height={height}/>
       ))}
       <div className="white"></div>
       {str4.map((item, index) => (
-        <People key={index} color={item} />
+        <People key={index} color={item} width={width} height={height}/>
       ))}
       <div className="white"></div>
       {str5.map((item, index) => (
-        <People key={index} color={item} />
+        <People key={index} color={item} width={width} height={height}/>
       ))}
       <div className="white"></div>
       <div className="bottom">

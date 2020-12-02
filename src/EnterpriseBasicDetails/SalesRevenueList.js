@@ -25,7 +25,7 @@ function SalesRevenueList() {
         <span className="sale-price">销售额度</span>
       </div>
       <Swiper
-        loop={false}
+        loop={true}
         direction={"vertical"}
         slidesPerView={17}
         autoplay={{delay: 1000, disableOnInteraction: false}}

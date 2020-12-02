@@ -25,8 +25,8 @@ function Header({current, showMenu, setCurrent, setMenuShow}) {
 				showMenu &&
 				<div className="list">
 					{
-						menuMap.filter(item => item.title !== current).map(menu => (
-							<Link to={menu.link} key={menu.title} onClick={() => setCurrent(menu.title)}>
+						menuMap.map(menu => (
+							<Link to={menu.link} key={menu.title} onClick={() => setCurrent(menu.title)} className={current === menu.title ? "active" : ""}>
 								{menu.title}
 							</Link>
 						))

@@ -4,7 +4,7 @@ export const ArrowIcon = ({ listStatus }) => <svg style={{ transform: (listStatu
   <path fillRule="evenodd" clipRule="evenodd" d="M7 11L14 0H0L7 11Z" fill="#90D5FF" />
 </svg>
 
-export const People = ({ color }) => <svg style={{ marginLeft: '1px' }} width="20" height="35" viewBox="0 0 15 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const People = ({ color,width=20,height=35}) => <svg style={{ marginLeft: '1px' }} width={window.innerWidth > 1600 ? width : 15} height={window.innerWidth > 1600 ? height : 25} viewBox="0 0 15 40" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path fillRule="evenodd" clipRule="evenodd" d="M8 10C5.23858 10 3 7.76142 3 5C3 2.23858 5.23858 0 8 0C10.7614 0 13 2.23858 13 5C13 7.76142 10.7614 10 8 10ZM12.32 10H12.8C14.56 10 16 11.4235 16 13.1634V24.2352C16 25.1579 15.6 25.8696 14.6667 25.8169C13.8133 25.7642 13.1733 25.0261 13.1733 24.1825V18.6993H12.4V37.996C12.4 39.1031 11.4933 39.9994 10.3733 39.9731C9.25333 39.9731 8.4 39.0241 8.4 37.9432V27.3459H7.6V38.0223C7.6 39.1295 6.69333 40.0258 5.57333 39.9994C4.45333 39.9994 3.6 39.0504 3.6 37.9696V18.6729H2.82667V24.2089C2.82667 25.1315 2.05333 25.8433 1.12 25.7906C0.266667 25.7378 0 24.9997 0 24.1561V13.1634C0 11.4235 1.44 10 3.2 10H3.68C4.85333 10.9754 6.34667 11.5817 8 11.5817C9.65333 11.5817 11.1467 10.9754 12.32 10Z" fill={color} />
 </svg>
 

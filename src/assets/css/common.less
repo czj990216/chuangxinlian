@@ -31,7 +31,6 @@ header {
     position: absolute;
     top: 66px;
     right: 77px;
-    border: 1px solid rgba(11, 221, 255, 0.5);
     box-shadow: inset 0px 0px 20px 10px rgba(87, 173, 255, 0.2);
     background: #10225e;
     width: 240px;
@@ -39,14 +38,18 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    z-index: 1;
     a {
       width: 100%;
+    border: 1px solid rgba(11, 221, 255, 0.5);
       color: #90d5ff;
       text-decoration: none;
       font-size: 20px;
       line-height: 68px;
       height: 68px;
+    }
+    .active {
+      color: rgba(144, 213, 255, 0.6);
     }
   }
 }
